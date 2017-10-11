@@ -1,0 +1,22 @@
+li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.leaf {
+    color: green;
+}
+
+.parent {
+    font-weight: bold;
+    color: red;
+}
+
+.root {
+    text-decoration: underline;
+}
+
+.highlight {
+    background-color: #FFFF88;
+    font-weight: bold;
+}

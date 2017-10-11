@@ -1,3 +1,55 @@
+<!DOCTYPE html>
 <html>
-<h1>Hello world</h1>
-</html>
+
+<head>
+    <script src='https://code.jquery.com/jquery-3.2.1.js' integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=' crossorigin='anonymous'></script>
+    <script src='jquery.highlight.js'></script>
+    <script src='main.js'></script>
+    <link rel='stylesheet' href='styles.css' />
+</head>
+
+<body>
+    <input type='text' class='search' /><span class='searchStatus'></span>
+    <div class='cover'>
+    </div>
+    <script>
+        let inputdata = {
+            root: 'root',
+            data: [{
+                    name: 'node1',
+                    children: [{
+                            name: 'child1',
+                            children: [{
+                                name: 'child1_1'
+                            }, {
+                                name: 'child1_2'
+                            }]
+                        },
+                        {
+                            name: 'child2'
+                        }
+                    ]
+                },
+                {
+                    name: 'node2',
+                    children: [{
+                        name: 'child3'
+                    }]
+                }
+            ]
+        };
+        generateTree(inputdata);
+        updateClass();
+        $('.Collapsable').click((event) => {
+            $(event.currentTarget).parent().children().toggle();
+            $(event.currentTarget).toggle();
+        });
+        $('.Collapsable').map((i, el) => {
+            $(el).parent().children().toggle();
+            $(el).toggle();
+        });
+        $('.search').keyup(searchAndHighlight);
+
+       
+    </script>
+</body>
